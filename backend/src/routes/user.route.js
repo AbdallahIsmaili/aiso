@@ -2,6 +2,7 @@ import express from 'express';
 import {
   getMyFriends,
   getRecommendedUsers,
+  sendFriendRequest,
 } from "../controllers/user.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js"
 
@@ -13,5 +14,9 @@ router.use(protectRoute);
 
 router.get('/', getRecommendedUsers);
 router.get('/friends', getMyFriends);
+
+
+router.post("/friend-request/:id", sendFriendRequest);
+
 
 export default router;
