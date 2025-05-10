@@ -1,11 +1,15 @@
 import { Loader2 } from "lucide-react";
 import React from "react";
+import { useThemeStore } from "../store/useThemeStore";
 
 const PageLoader = () => {
+
+  const {theme} = useThemeStore();
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center gap-8"
-      data-theme="winter"
+      data-theme={theme}
     >
       {/* Animated gradient orb with floating particles */}
       <div className="relative h-40 w-40">
